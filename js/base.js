@@ -53,8 +53,6 @@ if (currentPage === 'index.html' && firstVisit!== 'false') {
 
 // 处理客服按钮点击事件
 function openWhatsApp() {
-    // 替换为你的WhatsApp电话号码
-    const phoneNumber = 'your_phone_number'; 
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+    const whatsappUrl = 'https://wa.me/85293847672';
     window.open(whatsappUrl, '_blank');
 }
