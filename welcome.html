@@ -24,14 +24,14 @@
         }
 
         /* 欢迎信息容器样式 */
-        .welcome-message {
+       .welcome-message {
             margin-bottom: 30px;
             animation: fadeInUp 1s ease;
             max-width: 80%; /* 限制内容最大宽度 */
         }
 
         /* 欢迎标题样式 */
-        .welcome-message h1 {
+       .welcome-message h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -39,7 +39,7 @@
         }
 
         /* 欢迎副标题样式 */
-        .welcome-message p {
+       .welcome-message p {
             font-size: 1.5rem;
             line-height: 1.6; /* 调整行高 */
             margin-bottom: 30px;
@@ -47,7 +47,7 @@
         }
 
         /* 按钮样式 */
-        .welcome-button {
+       .welcome-button {
             padding: 18px 35px;
             font-size: 1.3rem;
             background-color: rgba(255, 255, 255, 0.1); /* 透明背景 */
@@ -62,7 +62,7 @@
         }
 
         /* 按钮悬停效果 */
-        .welcome-button:hover {
+       .welcome-button:hover {
             background-color: rgba(255, 255, 255, 0.3); /* 悬停时背景稍加深 */
             transform: translateY(-3px);
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.4), 0 0 35px rgba(255, 255, 255, 0.3); /* 悬停时光影效果增强 */
@@ -82,19 +82,19 @@
 
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .welcome-message {
+           .welcome-message {
                 padding: 30px;
             }
 
-            .welcome-message h1 {
+           .welcome-message h1 {
                 font-size: 2.5rem;
             }
 
-            .welcome-message p {
+           .welcome-message p {
                 font-size: 1.2rem;
             }
 
-            .welcome-button {
+           .welcome-button {
                 padding: 15px 30px;
                 font-size: 1.1rem;
             }
@@ -112,6 +112,8 @@
         function enterWebsite() {
             // 设置用户已访问过欢迎页面
             sessionStorage.setItem('visitedWelcomePage', 'true');
+            sessionStorage.setItem('access_granted', 'true');
+            sessionStorage.setItem('first_visit_index', 'false');
             window.location.href = 'index.html';
         }
     </script>

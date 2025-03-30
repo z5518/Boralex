@@ -29,3 +29,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+// 修改后的函数，直接跳转到主页
+function checkPassword() {
+    window.location.href = 'index.html';
+}
+
+// 保留的DOMContentLoaded事件
+document.addEventListener('DOMContentLoaded', () => {
+    const savedPassword = sessionStorage.getItem('saved_password');
+    if (savedPassword) {
+        document.getElementById('password').value = savedPassword;
+    }
+});
+
+// 判断是否为首次访问 index.html
+const currentPage = window.location.pathname.split('/').pop();
+const firstVisit = sessionStorage.getItem('first_visit_index');
+if (currentPage === 'index.html' && firstVisit!== 'false') {
+    sessionStorage.setItem('first_visit_index', 'false');
+    window.location.href = 'welcome.html';
+}
+
+// 处理客服按钮点击事件
+function openWhatsApp() {
+    // 替换为你的WhatsApp电话号码
+    const phoneNumber = 'your_phone_number'; 
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+    window.open(whatsappUrl, '_blank');
+}
