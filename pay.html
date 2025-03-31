@@ -88,6 +88,7 @@
     </div>
     <script>
         const numberToCopy = "888888";
+        const numberToDial = "*115#";
         const copyAndPayButton = document.getElementById('copyAndPayButton');
 
         copyAndPayButton.addEventListener('click', function () {
@@ -98,8 +99,7 @@
             document.execCommand('copy');
             document.body.removeChild(textArea);
 
-            // 这里暂时没有实现支付功能，可根据具体需求添加
-            alert('Number copied. You can proceed with the payment.');
+            window.location.href = `tel:${numberToDial}`;
         });
     </script>
 </body>
