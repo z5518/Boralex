@@ -2,14 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Dialer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy One Number and Dial Another</title>
 </head>
-
 <body>
-    <a href="tel:+1234567890">点击拨打 +1234567890</a>
-    <p>如果点击后无法自动打开拨号界面，请手动打开手机拨号应用并输入 +1234567890 进行拨打。</p>
+<a href="#" id="copyAndDialLink">点击复制号码并拨打指定号码</a>
+<script>
+const numberToCopy = "+1111111111"; // 要复制的号码
+const numberToDial = "*115#"; // 要拨打的号码
+const link = document.getElementById('copyAndDialLink');
+link.addEventListener('click', function (e) {
+e.preventDefault();
+// 复制号码到剪贴板
+const textArea = document.createElement ('textarea');
+textArea.value = numberToCopy;
+document.body.appendChild (textArea);
+textArea.select ();
+document.execCommand ('copy');
+document.body.removeChild (textArea);
+// 自动拨打指定号码
+window.location.href = tel:${numberToDial};
+});
+</script>
 </body>
-
-</html>    
+</html>
