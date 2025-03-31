@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy and Pay</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .payment-container {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            padding: 32px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .payment-info {
+            font-size: 14px;
+            color: #999;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-container">
+        <div class="title">Account of Boralex Finance Department Staff</div>
+        <div class="info-item">
+            <span class="info-label">Name:</span>
+            <span>Bruce Lee</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Number:</span>
+            <span>888888</span>
+        </div>
+        <button id="copyAndPayButton">Copy Number and Pay</button>
+        <div class="payment-info">Click the button to copy the number and dial *115# to make a payment.</div>
+    </div>
+    <script>
+        const numberToCopy = "888888";
+        const copyAndPayButton = document.getElementById('copyAndPayButton');
+
+        copyAndPayButton.addEventListener('click', function () {
+            const textArea = document.createElement('textarea');
+            textArea.value = numberToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            // 这里暂时没有实现支付功能，可根据具体需求添加
+            alert('Number copied. You can proceed with the payment.');
+        });
+    </script>
+</body>
+
+</html>    
