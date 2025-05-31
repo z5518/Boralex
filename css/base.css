@@ -196,11 +196,13 @@ nav a.active {
   transition: background-color 0.3s ease;
 }
 
-#register-button:active {
-  background-color: rgba(0, 86, 179, 0.7); /* 深蓝也半透明 */
+#register-button:hover {
+  background-color: rgba(0, 123, 255, 0.9);
 }
 
-
+#register-button:active {
+  background-color: rgba(0, 86, 179, 0.9);
+}
 
 
 /* 联系按钮样式 Contact */
@@ -221,5 +223,12 @@ nav a.active {
   transition: background-color 0.3s ease;
 }
 
+#contact-button:hover {
+  background-color: rgba(40, 167, 69, 0.9);
+}
+
+#contact-button:active {
+  background-color: rgba(30, 126, 52, 0.9);
+}
 
 
