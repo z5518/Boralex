@@ -181,7 +181,7 @@ nav a.active {
 /* 注册按钮样式 Register */
 #register-button {
   position: fixed;
-  bottom: 220px;
+  bottom: 320px;
   right: 12px;
   z-index: 999;
   padding: 6px 16px;
