@@ -203,7 +203,7 @@ nav a.active {
 /* 联系按钮样式 Contact */
 #contact-button {
   position: fixed;
-  bottom: 110px;
+  bottom: 50px;
   right: 12px;
   z-index: 999;
   padding: 6px 16px;
