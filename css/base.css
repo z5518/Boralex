@@ -1,3 +1,4 @@
+
 /* ===================== 全局布局样式 ===================== */
 body, html {
     margin: 0;
@@ -9,7 +10,7 @@ body, html {
 /* 页面主要内容容器 */
 .container {
     max-width: 1000px;
-    margin: 80px auto 10px; /* 顶部空出导航栏高度 */
+    margin: 80px auto 10px;
     padding: 30px;
     background: #ffffff;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -76,44 +77,37 @@ nav {
     align-items: center;
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
 }
 
 nav a {
+    position: relative;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 18px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 15px;
+    white-space: nowrap;
     transition: background-color 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
     background-color: #34495e;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
-/* 移除菜单按钮（小屏时也不显示） */
-#menu-toggle {
-    display: none !important;
-}
-
-/* 小屏幕时保持横向导航栏 */
-@media (max-width: 768px) {
-    nav {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px 0;
-    }
-
-    nav a {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
+nav a:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 30%;
+    height: 40%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* ===================== 悬浮按钮样式 ===================== */
-
-/* 注册按钮样式 Register */
 #register-button {
   position: fixed;
   bottom: 195px;
@@ -139,7 +133,6 @@ nav a.active {
   background-color: rgba(0, 86, 179, 1);
 }
 
-/* 联系按钮样式 Contact */
 #contact-button {
   position: fixed;
   bottom: 153px;
@@ -181,5 +174,15 @@ nav a.active {
 @media (max-width: 768px) {
   #top-left-logo img {
     width: 80px;
+  }
+
+  nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  nav a {
+    padding: 8px 10px;
+    font-size: 14px;
   }
 }
