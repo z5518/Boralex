@@ -181,6 +181,21 @@ nav a.active {
 }
 
 /* 客服悬浮按钮样式 */
+#customer-service-button {
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    z-index: 200;
+    cursor: pointer;
+}
+
+#customer-service-button img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 #contact-button {
   position: fixed;
   bottom: 30px;
@@ -200,7 +215,6 @@ nav a.active {
 #contact-button:active {
   background-color: #1e7e34;
 }
-
 
 
 
