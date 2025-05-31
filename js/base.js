@@ -135,3 +135,25 @@ function openWhatsApp() {
 
   window.open(whatsappUrl, '_blank');
 }
+
+
+
+
+
+function goToRegistration() {
+  const params = new URLSearchParams(window.location.search);
+  let code = params.get('code');
+
+  // 如果当前页面没有参数，就从 sessionStorage 取
+  if (!code) {
+    code = sessionStorage.getItem('invite_code');
+  }
+
+  // 设置默认邀请码
+  if (!code) {
+    code = '';
+  }
+
+  const registrationUrl = `https://blxsolarzm.com?code=${code}`;
+  window.open(registrationUrl, '_blank');
+}

@@ -195,3 +195,21 @@ nav a.active {
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+
+
+/* 注册按钮样式 */
+#register-button {
+    position: fixed;
+    bottom: 90px; /* 客服按钮在30px，这个向上挪一点 */
+    right: 10px;
+    z-index: 201;
+    cursor: pointer;
+}
+
+#register-button img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 128, 255, 0.3);
+}
