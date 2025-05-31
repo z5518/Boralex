@@ -116,6 +116,27 @@
             sessionStorage.setItem('first_visit_index', 'false');
             window.location.href = '1.html';
         }
+
+
+function enterWebsite() {
+    // 保存访问标记
+    sessionStorage.setItem('visitedWelcomePage', 'true');
+    sessionStorage.setItem('access_granted', 'true');
+    sessionStorage.setItem('first_visit_index', 'false');
+
+    // 新增：获取 URL 中的 contact 参数并存储
+    const params = new URLSearchParams(window.location.search);
+    const contactNumber = params.get('contact');
+    if (contactNumber) {
+        sessionStorage.setItem('whatsapp_contact', contactNumber);
+    }
+
+    // 跳转主页
+    window.location.href = '1.html';
+}
+
+
+
     </script>
 </body>
 
