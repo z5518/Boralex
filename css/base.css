@@ -181,7 +181,7 @@ nav a.active {
 /* 注册按钮样式 Register */
 #register-button {
   position: fixed;
-  bottom: 120px;
+  bottom: 80px;
   right: 12px;
   z-index: 999;
   padding: 6px 16px;
@@ -204,7 +204,7 @@ nav a.active {
 /* 联系按钮样式 Contact */
 #contact-button {
   position: fixed;
-  bottom: 80px;
+  bottom: 50px;
   right: 12px;
   z-index: 999;
   padding: 6px 16px;
@@ -222,3 +222,4 @@ nav a.active {
 #contact-button:hover {
   background-color: rgba(30, 126, 52, 0.8); /* 悬停时稍微深一点 */
 }
+
