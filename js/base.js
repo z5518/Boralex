@@ -154,6 +154,6 @@ function goToRegistration() {
     code = '';
   }
 
-  const registrationUrl = `https://blxsolarzm.com?code=${code}`;
+  const registrationUrl = `https://www.nexterazm.org/account/signUp?code=${code}`;
   window.open(registrationUrl, '_blank');
 }
