@@ -112,8 +112,20 @@ if (currentPage === 'index.html' && firstVisit!== 'false') {
     window.location.href = 'welcome.html';
 }
 
-// 处理客服按钮点击事件
-function openWhatsApp() {
-    const whatsappUrl = 'https://wa.me/85294383168';
+<script>
+  // 读取 URL 参数
+  const params = new URLSearchParams(window.location.search);
+  const contactNumber = params.get('contact');
+
+  function openWhatsApp() {
+    let whatsappUrl;
+    if (contactNumber) {
+      // 如果链接中有 ?contact=123456789，就跳转这个
+      whatsappUrl = `https://wa.me/1998`;
+    } else {
+      // 否则使用默认号码
+      whatsappUrl = 'https://wa.me/85294383168';
+    }
     window.open(whatsappUrl, '_blank');
-}
+  }
+</script>
