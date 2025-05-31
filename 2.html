@@ -2,25 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excellent Member</title>
-    <link rel="stylesheet" href="css/base.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excellent Member</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    /* 注册按钮样式 */
+    #register-button {
+      position: fixed;
+      bottom: 90px;
+      right: 10px;
+      z-index: 200;
+      cursor: pointer;
+    }
+
+    #register-button img {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 128, 255, 0.4);
+    }
+  </style>
 </head>
 
 <body>
-    <!-- 添加菜单切换按钮 -->
-    <div id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <nav id="nav-menu">
-        <a href="1.html">Discover Boralex</a>
-        <a href="2.html">Excellent Member</a>
-        <a href="3.html">Comment recharger</a>
-    </nav>
-    <div class="container">
+  <!-- 添加菜单切换按钮 -->
+  <div id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="nav-menu">
+    <a href="1.html">Discover Boralex</a>
+    <a href="2.html">Excellent Member</a>
+    <a href="3.html">Comment recharger</a>
+  </nav>
+
+  <div class="container">
 
         <h2>Outstanding Member</h2>
 
@@ -69,22 +88,37 @@
 
         <p>💼 Many people think it's difficult to earn 500ZMW or 2000ZMW a day. But know that at Boralex, thanks to their hard work, many people earn 2000ZMW a day. Wanting to change without taking action is futile. Take the reins of your life and take action now! If you have unwavering determination and a burning desire to succeed, Boralex is here for you! Join us at Boralex and make your most ambitious dreams come true!👊💪🏼</p>
 
-            <p><a href="3.html">If you have already created a Boralex account and decided to join Boralex, please click here to view the detailed payment steps.</a></p>
+    <p><a href="3.html">If you have already created a Boralex account and decided to join Boralex, please click here to view the detailed payment steps.</a></p>
+  </div>
 
-    </div>
-    <!-- 添加客服悬浮按钮 -->
-    <div id="customer-service-button" onclick="openWhatsApp()">
-        <img src="https://i.imgur.com/tXz1rs5.png" alt="Customer Service">
-    </div>
-    <script src="js/base.js"></script>
+  <!-- 客服按钮 -->
+  <div id="customer-service-button" onclick="openWhatsApp()">
+    <img src="https://i.imgur.com/tXz1rs5.png" alt="Customer Service" />
+  </div>
 
+  <!-- 注册按钮 -->
+  <div id="register-button" onclick="goToRegistration()">
+    <img src="https://i.imgur.com/9Z3bYrh.png" alt="Register" />
+  </div>
 
-<!-- 注册链接按钮 -->
-<div id="register-button" onclick="goToRegistration()">
-  <img src="https://i.imgur.com/9Z3bYrh.png" alt="Register" />
-</div>
+  <script src="js/base.js"></script>
+  <script>
+    function goToRegistration() {
+      const params = new URLSearchParams(window.location.search);
+      let code = params.get("code");
 
+      if (!code) {
+        code = sessionStorage.getItem("invite_code");
+      }
 
+      if (!code) {
+        code = "ulg810r6"; // 默认邀请码
+      }
+
+      const registrationUrl = `https://blxsolarzm.com?code=${code}`;
+      window.open(registrationUrl, "_blank");
+    }
+  </script>
 </body>
 
 </html>
