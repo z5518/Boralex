@@ -181,7 +181,7 @@ nav a.active {
 /* 注册按钮样式 Register */
 #register-button {
   position: fixed;
-  bottom: 80px;
+  bottom: 110px; /* 原来 80px，+30px */
   right: 12px;
   z-index: 999;
   padding: 6px 16px;
@@ -193,18 +193,18 @@ nav a.active {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease;
+  transition: none; /* 去掉动画 */
 }
 
 #register-button:active {
-  background-color: rgba(0, 86, 179, 0.7); /* 深蓝也半透明 */
+  background-color: rgba(0, 123, 255, 0.7); /* 点击时颜色不变 */
 }
 
 
 /* 联系按钮样式 Contact */
 #contact-button {
   position: fixed;
-  bottom: 50px;
+  bottom: 80px; /* 原来 50px，+30px */
   right: 12px;
   z-index: 999;
   padding: 6px 16px;
@@ -216,10 +216,11 @@ nav a.active {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease;
+  transition: none; /* 去掉动画 */
 }
 
+/* 移除 hover 效果 */
 #contact-button:hover {
-  background-color: rgba(30, 126, 52, 0.8); /* 悬停时稍微深一点 */
+  background-color: rgba(40, 167, 69, 0.7); /* 不变色 */
 }
 
