@@ -1,10 +1,14 @@
-
 /* ===================== 全局布局样式 ===================== */
 body, html {
     margin: 0;
     padding: 0;
     font-family: "Open Sans", sans-serif;
     background-color: #f4f4f4;
+    background-image: url('your-background-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-left: 150px; /* 为左侧导航栏留出空间 */
 }
 
 /* 页面主要内容容器 */
@@ -21,6 +25,38 @@ body, html {
 @media (max-width: 768px) {
     .container {
         margin-top: 0px;
+    }
+
+    body {
+        padding-left: 0;
+        padding-top: 50px;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        height: auto;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        padding-top: 50px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        text-align: left;
+        padding: 15px 25px;
     }
 }
 
@@ -65,15 +101,6 @@ iframe {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 背景图（如果需要） */
-body {
-    background-image: url('your-background-image-url.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-left: 150px; /* 为左侧导航栏留出空间 */
-}
-
 /* ===================== 菜单样式 ===================== */
 #menu-toggle {
     display: none;
@@ -98,12 +125,15 @@ body {
 #menu-toggle.active span {
     background-color: white;
 }
+
 #menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
+
 #menu-toggle.active span:nth-child(2) {
     opacity: 0;
 }
+
 #menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
 }
@@ -141,47 +171,12 @@ nav a.active {
     background-color: #34495e;
 }
 
-/* 小屏幕下导航菜单样式 */
-@media (max-width: 768px) {
-    body {
-        padding-left: 0;
-        padding-top: 50px;
-    }
-
-    #menu-toggle {
-        display: block;
-    }
-
-    nav {
-        display: none;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-        height: auto;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 100;
-        padding-top: 50px;
-    }
-
-    nav.active {
-        display: flex;
-    }
-
-    nav a {
-        text-align: left;
-        padding: 15px 25px;
-    }
-}
-
 /* ===================== 悬浮按钮样式 ===================== */
 
 /* 注册按钮样式 Register */
 #register-button {
   position: fixed;
-  bottom: 320px;
+  bottom: 220px;
   right: 12px;
   z-index: 999;
   padding: 6px 16px;
@@ -203,7 +198,6 @@ nav a.active {
 #register-button:active {
   background-color: rgba(0, 86, 179, 1);
 }
-
 
 /* 联系按钮样式 Contact */
 #contact-button {
@@ -230,4 +224,3 @@ nav a.active {
 #contact-button:active {
   background-color: rgba(30, 126, 52, 1);
 }
-
