@@ -229,3 +229,23 @@ nav a.active {
 #contact-button:active {
   background-color: rgba(30, 126, 52, 1);
 }
+
+
+#top-left-logo {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+
+#top-left-logo img {
+  width: 100px;
+  height: auto;
+}
+
+
+@media (max-width: 768px) {
+  #top-left-logo img {
+    width: 80px;
+  }
+}
