@@ -112,19 +112,21 @@ if (currentPage === 'index.html' && firstVisit!== 'false') {
     window.location.href = 'welcome.html';
 }
 
-  // 获取 URL 中的 contact 参数
+
+
+
+function openWhatsApp() {
   const params = new URLSearchParams(window.location.search);
   const contactNumber = params.get('contact');
 
-  function openWhatsApp() {
-    let whatsappUrl;
-    if (contactNumber && /^[0-9]+$/.test(contactNumber)) {
-      // 如果参数合法，就跳转到这个号码
-      whatsappUrl = `https://wa.me/${contactNumber}`;
-    } else {
-      // 否则跳转默认你的号码
-      whatsappUrl = 'https://wa.me/85294383168';
-    }
-    window.open(whatsappUrl, '_blank');
+  let whatsappUrl;
+  if (contactNumber && /^[0-9]+$/.test(contactNumber)) {
+    // 跳转这个测试号码
+    whatsappUrl = `https://wa.me/${contactNumber}`;
+  } else {
+    // 默认号码是你自己的
+    whatsappUrl = 'https://wa.me/85294383168';
   }
 
+  window.open(whatsappUrl, '_blank');
+}
