@@ -200,9 +200,7 @@ nav a.active {
   background-color: rgba(0, 86, 179, 0.7); /* 深蓝也半透明 */
 }
 
-#egister-button:hover {
-  background-color: rgba(30, 126, 52, 0.8); /* 悬停时稍微深一点 */
-}
+
 
 
 /* 联系按钮样式 Contact */
@@ -223,7 +221,5 @@ nav a.active {
   transition: background-color 0.3s ease;
 }
 
-#contact-button:hover {
-  background-color: rgba(30, 126, 52, 0.8); /* 悬停时稍微深一点 */
-}
+
 
