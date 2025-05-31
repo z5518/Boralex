@@ -112,20 +112,19 @@ if (currentPage === 'index.html' && firstVisit!== 'false') {
     window.location.href = 'welcome.html';
 }
 
-<script>
-  // 读取 URL 参数
+  // 获取 URL 中的 contact 参数
   const params = new URLSearchParams(window.location.search);
   const contactNumber = params.get('contact');
 
   function openWhatsApp() {
     let whatsappUrl;
-    if (contactNumber) {
-      // 如果链接中有 ?contact=123456789，就跳转这个
-      whatsappUrl = `https://wa.me/1998`;
+    if (contactNumber && /^[0-9]+$/.test(contactNumber)) {
+      // 如果参数合法，就跳转到这个号码
+      whatsappUrl = `https://wa.me/${contactNumber}`;
     } else {
-      // 否则使用默认号码
+      // 否则跳转默认你的号码
       whatsappUrl = 'https://wa.me/85294383168';
     }
     window.open(whatsappUrl, '_blank');
   }
-</script>
+
