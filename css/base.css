@@ -200,19 +200,21 @@ nav a.active {
 
 #register-button {
   position: fixed;
-  bottom: 90px;
-  right: 10px;
+  bottom: 70px;
+  right: 12px;
   z-index: 200;
-  cursor: pointer;
+  width: 40px;
+  height: 40px;
   background-color: #007bff;
   color: white;
-  padding: 12px 24px;
-  border-radius: 50px; /* 椭圆形 */
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
   transition: background-color 0.3s ease;
-  text-align: center;
 }
 
 #register-button:hover {
