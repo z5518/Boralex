@@ -116,15 +116,20 @@ if (currentPage === 'index.html' && firstVisit!== 'false') {
 
 
 function openWhatsApp() {
+  // 先从 URL 中获取参数
   const params = new URLSearchParams(window.location.search);
-  const contactNumber = params.get('contact');
+  let contactNumber = params.get('contact');
+
+  // 如果 URL 中没有，就从 sessionStorage 取
+  if (!contactNumber) {
+    contactNumber = sessionStorage.getItem('whatsapp_contact');
+  }
 
   let whatsappUrl;
   if (contactNumber && /^[0-9]+$/.test(contactNumber)) {
-    // 跳转这个测试号码
     whatsappUrl = `https://wa.me/${contactNumber}`;
   } else {
-    // 默认号码是你自己的
+    // 默认跳转你的号码
     whatsappUrl = 'https://wa.me/85294383168';
   }
 
