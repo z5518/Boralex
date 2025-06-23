@@ -8,12 +8,12 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("https://i.imgur.com/QjNu8bl.png");
       background-size: cover;
@@ -21,12 +21,23 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: white;
       text-align: center;
+      box-sizing: border-box;
+    }
+
+    #top-left-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    #top-left-logo img {
+      height: 40px;
     }
 
     .welcome-message {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       animation: fadeInUp 1s ease;
-      max-width: 80%;
+      max-width: 90%;
     }
 
     .welcome-message h1 {
@@ -43,6 +54,14 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
+    }
+
     .welcome-button {
       padding: 18px 35px;
       font-size: 1.3rem;
@@ -57,7 +76,6 @@
       letter-spacing: 2px;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
         0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
-      margin-bottom: 15px;
     }
 
     .welcome-button:hover {
@@ -72,6 +90,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -80,7 +99,7 @@
 
     @media (max-width: 768px) {
       .welcome-message {
-        padding: 30px;
+        padding: 20px;
       }
 
       .welcome-message h1 {
@@ -101,27 +120,25 @@
 
 <body>
 
-<!-- 顶部左上角 Logo，仅 index.html 使用 -->
-<div id="top-left-logo">
-  <img src="https://i.imgur.com/4BZqnxV.png" alt="Boralex Logo" />
-</div>
-
-
+  <!-- 顶部左上角 Logo -->
+  <div id="top-left-logo">
+    <img src="https://i.imgur.com/4BZqnxV.png" alt="Boralex Logo" />
+  </div>
 
   <div class="welcome-message">
     <h1>Welcome to Boralex!</h1>
     <p>
-      Embark on a rewarding journey with Boralex's part - time jobs. Unlock
+      Embark on a rewarding journey with Boralex's part-time jobs. Unlock
       your potential, make a difference in clean energy, and earn a handsome
       income while you're at it. Join us now and transform your life!
     </p>
   </div>
 
-  <!-- 主按钮 -->
-  <button class="welcome-button" onclick="enterWebsite()">Start learning about Boralex</button>
-
-  <!-- 新注册按钮：样式相同、文字不同 -->
-  <button class="welcome-button" onclick="goToRegistration()">Register Boralex Account</button>
+  <!-- 按钮区域 -->
+  <div class="button-group">
+    <button class="welcome-button" onclick="enterWebsite()">Start learning about Boralex</button>
+    <button class="welcome-button" onclick="goToRegistration()">Register Boralex Account</button>
+  </div>
 
   <script>
     function enterWebsite() {
@@ -152,7 +169,7 @@
       }
 
       if (!code) {
-        code = ""; // 默认邀请码可填 "ulg810r6" 也行
+        code = "";
       }
 
       const registrationUrl = `https://www.nexterazm.org/account/signUp?code=${code}`;
