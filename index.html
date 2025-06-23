@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +10,7 @@
       padding: 30px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       min-height: 100vh;
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -26,63 +25,60 @@
 
     #top-left-logo {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 16px;
+      left: 16px;
     }
 
     #top-left-logo img {
-      height: 40px;
+      height: 36px;
     }
 
     .welcome-message {
-      margin-bottom: 20px;
+      margin-top: 60px;
+      margin-bottom: 30px;
       animation: fadeInUp 1s ease;
       max-width: 90%;
     }
 
     .welcome-message h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       line-height: 1.2;
     }
 
     .welcome-message p {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 25px;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .button-group {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 12px;
       width: 100%;
-      max-width: 300px;
+      max-width: 280px;
+      margin-bottom: 30px;
     }
 
     .welcome-button {
-      padding: 18px 35px;
-      font-size: 1.3rem;
+      padding: 12px 24px;
+      font-size: 1rem;
       background-color: rgba(255, 255, 255, 0.1);
       color: white;
-      border: none;
-      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 40px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease,
-        box-shadow 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
-        0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
+      transition: all 0.25s ease;
+      letter-spacing: 1px;
     }
 
     .welcome-button:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-3px);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
-        0 0 25px rgba(255, 255, 255, 0.4), 0 0 35px rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 
     @keyframes fadeInUp {
@@ -97,22 +93,18 @@
       }
     }
 
-    @media (max-width: 768px) {
-      .welcome-message {
-        padding: 20px;
-      }
-
+    @media (max-width: 600px) {
       .welcome-message h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
 
       .welcome-message p {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
 
       .welcome-button {
-        padding: 15px 30px;
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        padding: 10px 20px;
       }
     }
   </style>
@@ -134,7 +126,6 @@
     </p>
   </div>
 
-  <!-- 按钮区域 -->
   <div class="button-group">
     <button class="welcome-button" onclick="enterWebsite()">Start learning about Boralex</button>
     <button class="welcome-button" onclick="goToRegistration()">Register Boralex Account</button>
@@ -177,5 +168,4 @@
     }
   </script>
 </body>
-
 </html>
