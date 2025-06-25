@@ -1,148 +1,171 @@
-<!-- index.html (登录页面) -->
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>登录 / 注册</title>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.6/+esm"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Boralex</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
+      margin: 0;
+      padding: 30px 20px;
       display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .container {
-      width: 360px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 24px;
-    }
-    h2 {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://i.imgur.com/QjNu8bl.png");
+      background-size: cover;
+      background-position: center;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
       text-align: center;
-      margin-bottom: 20px;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
       box-sizing: border-box;
     }
-    button {
+
+    #top-left-logo {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+    }
+
+    #top-left-logo img {
+      height: 36px;
+    }
+
+    .welcome-message {
+      margin-top: 60px;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease;
+      max-width: 90%;
+    }
+
+    .welcome-message h1 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      line-height: 1.2;
+    }
+
+    .welcome-message p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
       width: 100%;
-      padding: 10px;
-      background: #4CAF50;
+      max-width: 280px;
+      margin-bottom: 30px;
+    }
+
+    .welcome-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
       color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 40px;
       cursor: pointer;
+      transition: all 0.25s ease;
+      letter-spacing: 1px;
     }
-    button:hover {
-      background: #45a049;
+
+    .welcome-button:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
-    .toggle {
-      margin-top: 12px;
-      text-align: center;
-      cursor: pointer;
-      color: #0077cc;
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .toggle:hover {
-      text-decoration: underline;
-    }
-    .hidden {
-      display: none;
+
+    @media (max-width: 600px) {
+      .welcome-message h1 {
+        font-size: 2rem;
+      }
+
+      .welcome-message p {
+        font-size: 1rem;
+      }
+
+      .welcome-button {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h2 id="formTitle">登录</h2>
-    <input type="email" id="email" placeholder="邮箱" />
-    <input type="password" id="password" placeholder="密码" />
-    <input type="password" id="newPassword" class="hidden" placeholder="新密码" />
-    <button id="authBtn">登录</button>
-    <button id="changeBtn" class="hidden">确认修改密码</button>
-    <div class="toggle" id="switchToRegister">没有账户？点击注册</div>
-    <div class="toggle hidden" id="switchToLogin">已有账户？点击登录</div>
-    <div class="toggle hidden" id="switchToChange">修改密码</div>
+
+  <!-- 顶部左上角 Logo -->
+  <div id="top-left-logo">
+    <img src="https://i.imgur.com/4BZqnxV.png" alt="Boralex Logo" />
   </div>
 
-  <script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-    const supabase = createClient(
-      "https://tgybhckhjbmeafruvokc.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRneWJoY2toamJtZWFmcnV2b2tjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA3ODc5ODQsImV4cCI6MjA2NjM2Mzk4NH0.OWNrddp4hhZRSaCpH4NGRtoRB54hUcWDbfMEhi9Adfg"
-    );
+  <div class="welcome-message">
+    <h1>Welcome to Boralex!</h1>
+    <p>
+      Embark on a rewarding journey with Boralex's part-time jobs. Unlock
+      your potential, make a difference in clean energy, and earn a handsome
+      income while you're at it. Join us now and transform your life!
+    </p>
+  </div>
 
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const newPasswordInput = document.getElementById("newPassword");
-    const authBtn = document.getElementById("authBtn");
-    const changeBtn = document.getElementById("changeBtn");
+  <div class="button-group">
+    <button class="welcome-button" onclick="enterWebsite()">Start learning about Boralex</button>
+    <button class="welcome-button" onclick="goToRegistration()">Register Boralex Account</button>
+  </div>
 
-    const switchToRegister = document.getElementById("switchToRegister");
-    const switchToLogin = document.getElementById("switchToLogin");
-    const switchToChange = document.getElementById("switchToChange");
+  <script>
+    function enterWebsite() {
+      sessionStorage.setItem("visitedWelcomePage", "true");
+      sessionStorage.setItem("access_granted", "true");
+      sessionStorage.setItem("first_visit_index", "false");
 
-    let mode = "login";
+      const params = new URLSearchParams(window.location.search);
+      const contactNumber = params.get("contact");
+      if (contactNumber) {
+        sessionStorage.setItem("whatsapp_contact", contactNumber);
+      }
 
-    function show(modeToShow) {
-      mode = modeToShow;
-      document.getElementById("formTitle").innerText =
-        mode === "login" ? "登录" : mode === "register" ? "注册" : "修改密码";
+      const inviteCode = params.get("code");
+      if (inviteCode) {
+        sessionStorage.setItem("invite_code", inviteCode);
+      }
 
-      newPasswordInput.classList.toggle("hidden", mode !== "change");
-      authBtn.classList.toggle("hidden", mode === "change");
-      changeBtn.classList.toggle("hidden", mode !== "change");
-
-      switchToRegister.classList.toggle("hidden", mode !== "login");
-      switchToLogin.classList.toggle("hidden", mode === "login");
-      switchToChange.classList.toggle("hidden", mode !== "login");
+      window.location.href = "1.html";
     }
 
-    switchToRegister.onclick = () => show("register");
-    switchToLogin.onclick = () => show("login");
-    switchToChange.onclick = () => show("change");
+    function goToRegistration() {
+      const params = new URLSearchParams(window.location.search);
+      let code = params.get("code");
 
-    authBtn.onclick = async () => {
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
-      if (!email || !password) return alert("请输入邮箱和密码");
-
-      if (mode === "login") {
-        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) return alert("登录失败：" + error.message);
-        window.location.href = "main.html";
-      } else {
-        const { error } = await supabase.auth.signUp({ email, password });
-        if (error) return alert("注册失败：" + error.message);
-        alert("注册成功，请登录");
-        show("login");
+      if (!code) {
+        code = sessionStorage.getItem("invite_code");
       }
-    };
 
-    changeBtn.onclick = async () => {
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
-      const newPassword = newPasswordInput.value.trim();
-      if (!email || !password || !newPassword) return alert("请填写完整信息");
+      if (!code) {
+        code = "";
+      }
 
-      const { data, error: loginError } = await supabase.auth.signInWithPassword({ email, password });
-      if (loginError) return alert("登录验证失败：" + loginError.message);
-
-      const { error: changeError } = await supabase.auth.updateUser({ password: newPassword });
-      if (changeError) return alert("修改失败：" + changeError.message);
-      alert("密码修改成功，请重新登录");
-      show("login");
-    };
-
-    show("login");
+      const registrationUrl = `https://www.nexterazm.org/account/signUp?code=${code}`;
+      window.open(registrationUrl, "_blank");
+    }
   </script>
 </body>
 </html>
