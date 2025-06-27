@@ -96,7 +96,7 @@ function openWhatsApp() {
     if (contactNumber && /^[0-9]+$/.test(contactNumber)) {
         whatsappUrl = `https://wa.me/${contactNumber}`;
     } else {
-        whatsappUrl = 'https://wa.me/85294383168'; // 默认号码
+        whatsappUrl = 'https://wa.me/85257252858'; // 默认号码
     }
 
     window.open(whatsappUrl, '_blank');
